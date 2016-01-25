@@ -99,6 +99,7 @@ syn match   groovyClassDecl       "[^.]\s*\<class\>"ms=s+1
 syn keyword groovyBranch          break continue nextgroup=groovyUserLabelRef skipwhite
 syn match   groovyUserLabelRef    "\k\+" contained
 syn keyword groovyScopeDecl       public protected private abstract
+syn match   groovyAnnotation      "@\([_$a-zA-Z][_$a-zA-Z0-9]*\.\)*[_$a-zA-Z][_$a-zA-Z0-9]*\>\(([^)]*)\)\=" contains=groovyString
 
 
 if exists("groovy_highlight_groovy_lang_ids") || exists("groovy_highlight_groovy_lang") || exists("groovy_highlight_all")
@@ -433,6 +434,7 @@ if version >= 508 || !exists("did_groovy_syn_inits")
   GroovyHiLink groovyConstant		Constant
   GroovyHiLink groovyTypedef		Typedef
   GroovyHiLink groovyTodo		Todo
+  GroovyHiLink groovyAnnotation         PreProc
 
   GroovyHiLink groovyCommentTitle	SpecialComment
   GroovyHiLink groovyDocTags		Special
